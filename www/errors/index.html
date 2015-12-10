@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://nodejs.org/dist/latest-v5.x/docs/api/errors.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Errors Node.js v5.2.0 Manual &amp; Documentation</title>
+  <link rel="stylesheet" href="./Errors Node.js v5.2.0 Manual & Documentation_files/css">
+  <link rel="stylesheet" href="./Errors Node.js v5.2.0 Manual & Documentation_files/style.css">
+  <link rel="stylesheet" href="./Errors Node.js v5.2.0 Manual & Documentation_files/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/errors.html">
+</head>
+<body class="alt apidoc" id="api-section-errors">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="https://nodejs.org/" title="Go back to the home page">
+          Node.js (1)
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="https://nodejs.org/dist/latest-v5.x/docs/api/documentation.html">About these Docs</a></li>
+<li><a class="nav-synopsis" href="https://nodejs.org/dist/latest-v5.x/docs/api/synopsis.html">Synopsis</a></li>
+<li><a class="nav-assert" href="https://nodejs.org/dist/latest-v5.x/docs/api/assert.html">Assertion Testing</a></li>
+<li><a class="nav-buffer" href="https://nodejs.org/dist/latest-v5.x/docs/api/buffer.html">Buffer</a></li>
+<li><a class="nav-addons" href="https://nodejs.org/dist/latest-v5.x/docs/api/addons.html">C/C++ Addons</a></li>
+<li><a class="nav-child_process" href="https://nodejs.org/dist/latest-v5.x/docs/api/child_process.html">Child Processes</a></li>
+<li><a class="nav-cluster" href="https://nodejs.org/dist/latest-v5.x/docs/api/cluster.html">Cluster</a></li>
+<li><a class="nav-console" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html">Console</a></li>
+<li><a class="nav-crypto" href="https://nodejs.org/dist/latest-v5.x/docs/api/crypto.html">Crypto</a></li>
+<li><a class="nav-debugger" href="https://nodejs.org/dist/latest-v5.x/docs/api/debugger.html">Debugger</a></li>
+<li><a class="nav-dns" href="https://nodejs.org/dist/latest-v5.x/docs/api/dns.html">DNS</a></li>
+<li><a class="nav-domain" href="https://nodejs.org/dist/latest-v5.x/docs/api/domain.html">Domain</a></li>
+<li><a class="nav-errors active" href="./Errors Node.js v5.2.0 Manual & Documentation_files/Errors Node.js v5.2.0 Manual & Documentation.html">Errors</a></li>
+<li><a class="nav-events" href="https://nodejs.org/dist/latest-v5.x/docs/api/events.html">Events</a></li>
+<li><a class="nav-fs" href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html">File System</a></li>
+<li><a class="nav-globals" href="https://nodejs.org/dist/latest-v5.x/docs/api/globals.html">Globals</a></li>
+<li><a class="nav-http" href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https://nodejs.org/dist/latest-v5.x/docs/api/https.html">HTTPS</a></li>
+<li><a class="nav-modules" href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html">Modules</a></li>
+<li><a class="nav-net" href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html">Net</a></li>
+<li><a class="nav-os" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html">OS</a></li>
+<li><a class="nav-path" href="https://nodejs.org/dist/latest-v5.x/docs/api/path.html">Path</a></li>
+<li><a class="nav-process" href="https://nodejs.org/dist/latest-v5.x/docs/api/process.html">Process</a></li>
+<li><a class="nav-punycode" href="https://nodejs.org/dist/latest-v5.x/docs/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="https://nodejs.org/dist/latest-v5.x/docs/api/querystring.html">Query Strings</a></li>
+<li><a class="nav-readline" href="https://nodejs.org/dist/latest-v5.x/docs/api/readline.html">Readline</a></li>
+<li><a class="nav-repl" href="https://nodejs.org/dist/latest-v5.x/docs/api/repl.html">REPL</a></li>
+<li><a class="nav-stream" href="https://nodejs.org/dist/latest-v5.x/docs/api/stream.html">Stream</a></li>
+<li><a class="nav-string_decoder" href="https://nodejs.org/dist/latest-v5.x/docs/api/string_decoder.html">String Decoder</a></li>
+<li><a class="nav-timers" href="https://nodejs.org/dist/latest-v5.x/docs/api/timers.html">Timers</a></li>
+<li><a class="nav-tls" href="https://nodejs.org/dist/latest-v5.x/docs/api/tls.html">TLS/SSL</a></li>
+<li><a class="nav-tty" href="https://nodejs.org/dist/latest-v5.x/docs/api/tty.html">TTY</a></li>
+<li><a class="nav-dgram" href="https://nodejs.org/dist/latest-v5.x/docs/api/dgram.html">UDP/Datagram</a></li>
+<li><a class="nav-url" href="https://nodejs.org/dist/latest-v5.x/docs/api/url.html">URL</a></li>
+<li><a class="nav-util" href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html">Utilities</a></li>
+<li><a class="nav-v8" href="https://nodejs.org/dist/latest-v5.x/docs/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="https://nodejs.org/dist/latest-v5.x/docs/api/vm.html">VM</a></li>
+<li><a class="nav-zlib" href="https://nodejs.org/dist/latest-v5.x/docs/api/zlib.html">ZLIB</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="errors" class="interior">
+      <header>
+        <h1>Node.js v5.2.0 Documentation</h1>
+        <div id="gtoc">
+          <p>
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/index.html" name="toc">Index</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/all.html">View on single page</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.json">View as JSON</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_errors">Errors</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_propagation_and_interception">Error Propagation and Interception</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_events">Error events</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_node_style_callbacks">Node style callbacks</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_javascript_errors">JavaScript Errors</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_error">Class: Error</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_new_error_message">new Error(message)</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_capturestacktrace_targetobject_constructoropt">Error.captureStackTrace(targetObject[, constructorOpt])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_stacktracelimit">Error.stackTraceLimit</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_message">error.message</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_stack">error.stack</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_rangeerror">Class: RangeError</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_referenceerror">Class: ReferenceError</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_syntaxerror">Class: SyntaxError</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_typeerror">Class: TypeError</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_exceptions_vs_errors">Exceptions vs. Errors</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_system_errors">System Errors</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_system_error">Class: System Error</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_code">error.code</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_errno">error.errno</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_syscall">error.syscall</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_common_system_errors">Common System Errors</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eacces_permission_denied">EACCES: Permission denied</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eaddrinuse_address_already_in_use">EADDRINUSE: Address already in use</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_econnrefused_connection_refused">ECONNREFUSED: Connection refused</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_econnreset_connection_reset_by_peer">ECONNRESET: Connection reset by peer</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eexist_file_exists">EEXIST: File exists</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eisdir_is_a_directory">EISDIR: Is a directory</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_emfile_too_many_open_files_in_system">EMFILE: Too many open files in system</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enoent_no_such_file_or_directory">ENOENT: No such file or directory</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enotdir_not_a_directory">ENOTDIR: Not a directory</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enotempty_directory_not_empty">ENOTEMPTY: Directory not empty</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eperm_operation_not_permitted">EPERM: Operation not permitted</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_epipe_broken_pipe">EPIPE: Broken pipe</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_etimedout_operation_timed_out">ETIMEDOUT: Operation timed out</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>Errors<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_errors" id="errors_errors">#</a></span></h1>
+<!--type=misc-->
+
+<p>Errors generated by Node.js fall into two categories: JavaScript errors and system
+errors. All errors inherit from or are instances of JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error"><code>Error</code></a>
+class and are guaranteed to provide <em>at least</em> the attributes available on that
+class.
+
+</p>
+<p>When an operation is not permitted due to language-syntax or
+language-runtime-level reasons, a <strong>JavaScript error</strong> is generated and thrown
+as an <strong>exception</strong>. If an operation is not allowed due to system-level
+restrictions, a <strong>system error</strong> is generated. Client code is then given the
+opportunity to <strong>intercept</strong> this error based on how the API <strong>propagates</strong> it.
+
+</p>
+<p>The style of API called determines how generated errors are handed back, or
+<strong>propagated</strong>, to client code, which in turn informs how the client may <strong>intercept</strong>
+the error. Exceptions can be intercepted using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code>try / catch</code> construct</a>;
+other propagation strategies are covered <a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_propagation_and_interception">below</a>.
+
+</p>
+<h2>Error Propagation and Interception<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_propagation_and_interception" id="errors_error_propagation_and_interception">#</a></span></h2>
+<!--type=misc-->
+
+<p>All Node.js APIs will treat invalid arguments as exceptional -- that is, if passed
+invalid arguments, they will <em>immediately</em> generate and throw the error as an
+exception, even if they are an otherwise asynchronous API.
+
+</p>
+<p>Synchronous APIs (like <a href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html#fs_fs_readfilesync_file_options"><code>fs.readFileSync</code></a>) will throw the error. The act of
+<em>throwing</em> a value (in this case, the error) turns the value into an <strong>exception</strong>.
+Exceptions may be caught using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code>try { } catch(err) { }</code></a> construct.
+
+</p>
+<p>Asynchronous APIs have <strong>two</strong> mechanisms for error propagation; one mechanism
+for APIs that represent a single operation, and one for APIs that represent
+multiple operations over time.
+
+</p>
+<h3>Error events<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_events" id="errors_error_events">#</a></span></h3>
+<!--type=misc-->
+
+<p>The other mechanism for providing errors is the <code>'error'</code> event. This is
+typically used by <a href="https://nodejs.org/dist/latest-v5.x/docs/api/stream.html">stream-based</a> and <a href="https://nodejs.org/dist/latest-v5.x/docs/api/events.html#events_class_events_eventemitter">event emitter-based</a> APIs, which
+themselves represent a series of asynchronous operations over time (versus a
+single operation that may pass or fail). If no <code>'error'</code> event handler is
+attached to the source of the error, the error will be thrown. At this point,
+it will crash the process as an unhandled exception unless <a href="https://nodejs.org/dist/latest-v5.x/docs/api/domain.html">domains</a> are
+employed appropriately or <a href="https://nodejs.org/dist/latest-v5.x/docs/api/process.html#process_event_uncaughtexception"><code>process.on('uncaughtException')</code></a> has a handler.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">var</span> net <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'net'</span><span class="sh_symbol">);</span>
+
+<span class="sh_keyword">var</span> connection <span class="sh_symbol">=</span> net<span class="sh_symbol">.</span><span class="sh_function">connect</span><span class="sh_symbol">(</span><span class="sh_string">'localhost'</span><span class="sh_symbol">);</span>
+
+<span class="sh_comment">// adding an 'error' event handler to a stream:</span>
+connection<span class="sh_symbol">.</span><span class="sh_function">on</span><span class="sh_symbol">(</span><span class="sh_string">'error'</span><span class="sh_symbol">,</span> <span class="sh_keyword">function</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  <span class="sh_comment">// if the connection is reset by the server, or if it can't</span>
+  <span class="sh_comment">// connect at all, or on any sort of error encountered by</span>
+  <span class="sh_comment">// the connection, the error will be sent here.</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">error</span><span class="sh_symbol">(</span>err<span class="sh_symbol">);</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">);</span>
+
+connection<span class="sh_symbol">.</span><span class="sh_function">pipe</span><span class="sh_symbol">(</span>process<span class="sh_symbol">.</span>stdout<span class="sh_symbol">);</span></code></pre>
+<p>The "throw when no error handlers are attached behavior" is not limited to APIs
+provided by Node.js -- even user created event emitters and streams will throw
+errors when no error handlers are attached. An example:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">var</span> EventEmitter <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'events'</span><span class="sh_symbol">);</span>
+
+<span class="sh_keyword">var</span> ee <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">EventEmitter</span><span class="sh_symbol">();</span>
+
+<span class="sh_function">setImmediate</span><span class="sh_symbol">(</span><span class="sh_keyword">function</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
+  <span class="sh_comment">// this will crash the process because no 'error' event</span>
+  <span class="sh_comment">// handler has been added.</span>
+  ee<span class="sh_symbol">.</span><span class="sh_function">emit</span><span class="sh_symbol">(</span><span class="sh_string">'error'</span><span class="sh_symbol">,</span> <span class="sh_keyword">new</span> <span class="sh_predef_func">Error</span><span class="sh_symbol">(</span><span class="sh_string">'This will crash'</span><span class="sh_symbol">));</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">);</span></code></pre>
+<p>As with node style callbacks, errors generated this way <em>cannot</em> be intercepted
+by <code>try { } catch(err) { }</code> -- they happen <em>after</em> the calling code has already
+exited.
+
+</p>
+<h3>Node style callbacks<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_node_style_callbacks" id="errors_node_style_callbacks">#</a></span></h3>
+<!--type=misc-->
+
+<p>Single operation APIs take "node style callbacks" -- a
+function provided to the API as an argument. The node style callback takes
+at least <strong>one</strong> argument -- <code>error</code> -- that will either be <code>null</code> (if no error
+was encountered) or an <code>Error</code> instance.  For instance:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">var</span> fs <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'fs'</span><span class="sh_symbol">);</span>
+
+fs<span class="sh_symbol">.</span><span class="sh_function">readFile</span><span class="sh_symbol">(</span><span class="sh_string">'/some/file/that/does-not-exist'</span><span class="sh_symbol">,</span> <span class="sh_keyword">function</span> <span class="sh_function">nodeStyleCallback</span><span class="sh_symbol">(</span>err<span class="sh_symbol">,</span> data<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span>  <span class="sh_comment">// Error: ENOENT</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span>data<span class="sh_symbol">)</span> <span class="sh_comment">// undefined / null</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">);</span>
+
+fs<span class="sh_symbol">.</span><span class="sh_function">readFile</span><span class="sh_symbol">(</span><span class="sh_string">'/some/file/that/does-exist'</span><span class="sh_symbol">,</span> <span class="sh_keyword">function</span><span class="sh_symbol">(</span>err<span class="sh_symbol">,</span> data<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span>  <span class="sh_comment">// null</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span>data<span class="sh_symbol">)</span> <span class="sh_comment">// &lt;Buffer: ba dd ca fe&gt;</span>
+<span class="sh_cbracket">}</span><span class="sh_symbol">)</span></code></pre>
+<p>Note that <code>try { } catch(err) { }</code> <strong>cannot</strong> intercept errors generated by
+asynchronous APIs. A common mistake for beginners is to try to use <code>throw</code>
+inside their node style callback:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_comment">// THIS WILL NOT WORK:</span>
+<span class="sh_keyword">var</span> fs <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'fs'</span><span class="sh_symbol">);</span>
+
+<span class="sh_keyword">try</span> <span class="sh_cbracket">{</span>
+  fs<span class="sh_symbol">.</span><span class="sh_function">readFile</span><span class="sh_symbol">(</span><span class="sh_string">'/some/file/that/does-not-exist'</span><span class="sh_symbol">,</span> <span class="sh_keyword">function</span><span class="sh_symbol">(</span>err<span class="sh_symbol">,</span> data<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+    <span class="sh_comment">// mistaken assumption: throwing here...</span>
+    <span class="sh_keyword">if</span> <span class="sh_symbol">(</span>err<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+      <span class="sh_keyword">throw</span> err<span class="sh_symbol">;</span>
+    <span class="sh_cbracket">}</span>
+  <span class="sh_cbracket">}</span><span class="sh_symbol">);</span>
+<span class="sh_cbracket">}</span> <span class="sh_keyword">catch</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  <span class="sh_comment">// ... will be caught here -- this is incorrect!</span>
+  console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span>err<span class="sh_symbol">);</span> <span class="sh_comment">// Error: ENOENT</span>
+<span class="sh_cbracket">}</span></code></pre>
+<p>This will not work! By the time the node style callback has been called, the
+surrounding code (including the <code>try { } catch(err) { }</code> will have already
+exited. Throwing an error inside a node style callback <strong>will crash the process</strong> in most cases.
+If <a href="https://nodejs.org/dist/latest-v5.x/docs/api/domain.html">domains</a> are enabled, they may intercept the thrown error; similarly, if a
+handler has been added to <code>process.on('uncaughtException')</code>, it will intercept
+the error.
+
+</p>
+<h2>JavaScript Errors<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_javascript_errors" id="errors_javascript_errors">#</a></span></h2>
+<!--type=misc-->
+
+<p>JavaScript errors typically denote that an API is being used incorrectly, or that
+there is a problem with the program as written.
+
+</p>
+<h3>Class: Error<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_error" id="errors_class_error">#</a></span></h3>
+<!--type=class-->
+
+<p>A general error object. Unlike other error objects, <code>Error</code> instances do not
+denote any specific circumstance of why the error occurred. Errors capture a
+"stack trace" detailing the point in the program at which they were
+instantiated, and may provide a description of the error.
+
+</p>
+<p><strong>Note</strong>: Node.js will generate this class of error to encapsulate system
+errors as well as plain JavaScript errors.
+
+</p>
+<h4>new Error(message)<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_new_error_message" id="errors_new_error_message">#</a></span></h4>
+<p>Instantiates a new <code>Error</code> object and sets its <code>.message</code> property to the provided
+message. Its <code>.stack</code> will represent the point in the program at which <code>new Error</code>
+was called. Stack traces are subject to <a href="https://code.google.com/p/v8-wiki/wiki/JavaScriptStackTraceApi">V8's stack trace API</a>.
+Stack traces only extend to the beginning of synchronous code execution, <em>or</em> a number of frames given by
+<code>Error.stackTraceLimit</code>, whichever is smaller.
+
+</p>
+<h4>Error.captureStackTrace(targetObject[, constructorOpt])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_capturestacktrace_targetobject_constructoropt" id="errors_error_capturestacktrace_targetobject_constructoropt">#</a></span></h4>
+<p>Creates a <code>.stack</code> property on <code>targetObject</code>, which when accessed returns
+a string representing the location in the program at which <code>Error.captureStackTrace</code>
+was called.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">var</span> myObject <span class="sh_symbol">=</span> <span class="sh_cbracket">{}</span><span class="sh_symbol">;</span>
+
+<span class="sh_predef_func">Error</span><span class="sh_symbol">.</span><span class="sh_function">captureStackTrace</span><span class="sh_symbol">(</span>myObject<span class="sh_symbol">);</span>
+
+myObject<span class="sh_symbol">.</span>stack  <span class="sh_comment">// similar to `new Error().stack`</span></code></pre>
+<p>The first line of the trace, instead of being prefixed with <code>ErrorType:
+message</code>, will be the result of <code>targetObject.toString()</code>.
+
+</p>
+<p><code>constructorOpt</code> optionally accepts a function. If given, all frames above
+<code>constructorOpt</code>, including <code>constructorOpt</code>, will be omitted from the generated
+stack trace.
+
+</p>
+<p>This is useful for hiding implementation details of error generation from the
+end user. A common way of using this parameter is to pass the current Error
+constructor to it:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript">
+<span class="sh_keyword">function</span> <span class="sh_function">MyError</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
+  <span class="sh_predef_func">Error</span><span class="sh_symbol">.</span><span class="sh_function">captureStackTrace</span><span class="sh_symbol">(</span><span class="sh_keyword">this</span><span class="sh_symbol">,</span> MyError<span class="sh_symbol">);</span>
+<span class="sh_cbracket">}</span>
+
+<span class="sh_comment">// without passing MyError to captureStackTrace, the MyError</span>
+<span class="sh_comment">// frame would should up in the .stack property. by passing</span>
+<span class="sh_comment">// the constructor, we omit that frame and all frames above it.</span>
+<span class="sh_keyword">new</span> <span class="sh_function">MyError</span><span class="sh_symbol">().</span>stack</code></pre>
+<h4>Error.stackTraceLimit<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_stacktracelimit" id="errors_error_stacktracelimit">#</a></span></h4>
+<p>Property that determines the number of stack frames collected by a stack trace
+(whether generated by <code>new Error().stack</code> or <code>Error.captureStackTrace(obj)</code>).
+
+</p>
+<p>The initial value is <code>10</code>. It may be set to any valid JavaScript number, which
+will affect any stack trace captured <em>after</em> the value has been changed. If set
+to a non-number value, stack traces will not capture any frames and will report
+<code>undefined</code> on access.
+
+</p>
+<h4>error.message<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_message" id="errors_error_message">#</a></span></h4>
+<p>A string of the value passed to <code>Error()</code> upon instantiation. The message will
+also appear in the first line of the stack trace of the error. Changing this
+property <em>may not</em> change the first line of the stack trace.
+
+</p>
+<h4>error.stack<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_stack" id="errors_error_stack">#</a></span></h4>
+<p>A property that, when <strong>accessed</strong>, returns a string representing the point in the program
+at which this error was instantiated. An example stacktrace follows:
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_predef_func">Error</span><span class="sh_symbol">:</span> Things keep happening<span class="sh_symbol">!</span>
+   <span class="sh_normal">at </span><span class="sh_symbol">/</span><span class="sh_normal">home</span><span class="sh_symbol">/</span><span class="sh_normal">gbusey</span><span class="sh_symbol">/</span>file<span class="sh_symbol">.</span>js<span class="sh_symbol">:</span><span class="sh_number">525</span><span class="sh_symbol">:</span><span class="sh_number">2</span>
+   at Frobnicator<span class="sh_symbol">.</span><span class="sh_function">refrobulate</span> <span class="sh_symbol">(</span><span class="sh_regexp">/home/g</span><span class="sh_normal">busey</span><span class="sh_symbol">/</span>business<span class="sh_symbol">-</span>logic<span class="sh_symbol">.</span>js<span class="sh_symbol">:</span><span class="sh_number">424</span><span class="sh_symbol">:</span><span class="sh_number">21</span><span class="sh_symbol">)</span>
+   at Actor<span class="sh_symbol">.&lt;</span>anonymous<span class="sh_symbol">&gt;</span> <span class="sh_symbol">(</span><span class="sh_regexp">/home/g</span><span class="sh_normal">busey</span><span class="sh_symbol">/</span>actors<span class="sh_symbol">.</span>js<span class="sh_symbol">:</span><span class="sh_number">400</span><span class="sh_symbol">:</span><span class="sh_number">8</span><span class="sh_symbol">)</span>
+   at <span class="sh_function">increaseSynergy</span> <span class="sh_symbol">(</span><span class="sh_regexp">/home/g</span><span class="sh_normal">busey</span><span class="sh_symbol">/</span>actors<span class="sh_symbol">.</span>js<span class="sh_symbol">:</span><span class="sh_number">701</span><span class="sh_symbol">:</span><span class="sh_number">6</span><span class="sh_symbol">)</span></code></pre>
+<p>The first line is formatted as <code>&lt;error class name&gt;: &lt;error message&gt;</code>, and it is followed
+by a series of stack frames (each line beginning with "at "). Each frame describes
+a call site in the program that lead to the error being generated. V8 attempts to
+display a name for each function (by variable name, function name, or object
+method name), but occasionally it will not be able to find a suitable name. If
+V8 cannot determine a name for the function, only location information will be
+displayed for that frame. Otherwise, the determined function name will be displayed
+with location information appended in parentheses.
+
+</p>
+<p>Frames are <strong>only</strong> generated for JavaScript functions. If, for example, execution
+synchronously passes through a C++ addon function called <code>cheetahify</code>, which itself
+calls a JavaScript function, the frame representing the <code>cheetahify</code> call will <strong>not</strong>
+be present in stacktraces:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">var</span> cheetahify <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'./native-binding.node'</span><span class="sh_symbol">);</span>
+
+<span class="sh_keyword">function</span> <span class="sh_function">makeFaster</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
+  <span class="sh_comment">// cheetahify *synchronously* calls speedy.</span>
+  <span class="sh_function">cheetahify</span><span class="sh_symbol">(</span><span class="sh_keyword">function</span> <span class="sh_function">speedy</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
+    <span class="sh_keyword">throw</span> <span class="sh_keyword">new</span> <span class="sh_predef_func">Error</span><span class="sh_symbol">(</span><span class="sh_string">'oh no!'</span><span class="sh_symbol">);</span>
+  <span class="sh_cbracket">}</span><span class="sh_symbol">);</span>
+<span class="sh_cbracket">}</span>
+
+<span class="sh_function">makeFaster</span><span class="sh_symbol">();</span> <span class="sh_comment">// will throw:</span>
+<span class="sh_comment">// /home/gbusey/file.js:6</span>
+<span class="sh_comment">//     throw new Error('oh no!');</span>
+<span class="sh_comment">//           ^</span>
+<span class="sh_comment">// Error: oh no!</span>
+<span class="sh_comment">//     at speedy (/home/gbusey/file.js:6:11)</span>
+<span class="sh_comment">//     at makeFaster (/home/gbusey/file.js:5:3)</span>
+<span class="sh_comment">//     at Object.&lt;anonymous&gt; (/home/gbusey/file.js:10:1)</span>
+<span class="sh_comment">//     at Module._compile (module.js:456:26)</span>
+<span class="sh_comment">//     at Object.Module._extensions..js (module.js:474:10)</span>
+<span class="sh_comment">//     at Module.load (module.js:356:32)</span>
+<span class="sh_comment">//     at Function.Module._load (module.js:312:12)</span>
+<span class="sh_comment">//     at Function.Module.runMain (module.js:497:10)</span>
+<span class="sh_comment">//     at startup (node.js:119:16)</span>
+<span class="sh_comment">//     at node.js:906:3</span></code></pre>
+<p>The location information will be one of:
+
+</p>
+<ul>
+<li><code>native</code>, if the frame represents a call internal to V8 (as in <code>[].forEach</code>).</li>
+<li><code>plain-filename.js:line:column</code>, if the frame represents a call internal to Node.js.</li>
+<li><code>/absolute/path/to/file.js:line:column</code>, if the frame represents a call in a user program, or its dependencies.</li>
+</ul>
+<p>It is important to note that the string representing the stacktrace is only
+generated on <strong>access</strong>: it is lazily generated.
+
+</p>
+<p>The number of frames captured by the stack trace is bounded by the smaller of
+<code>Error.stackTraceLimit</code> or the number of available frames on the current event
+loop tick.
+
+</p>
+<p>System-level errors are generated as augmented <code>Error</code> instances, which are detailed
+<a href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_system_errors">below</a>.
+
+</p>
+<h3>Class: RangeError<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_rangeerror" id="errors_class_rangeerror">#</a></span></h3>
+<p>A subclass of <code>Error</code> that indicates that a provided argument was not within the
+set or range of acceptable values for a function; whether that be a numeric
+range, or outside the set of options for a given function parameter. An example:
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'net'</span><span class="sh_symbol">).</span><span class="sh_function">connect</span><span class="sh_symbol">(-</span><span class="sh_number">1</span><span class="sh_symbol">);</span>  <span class="sh_comment">// throws RangeError, port should be &gt; 0 &amp;&amp; &lt; 65536</span></code></pre>
+<p>Node.js will generate and throw <code>RangeError</code> instances <em>immediately</em> -- they are a form
+of argument validation.
+
+</p>
+<h3>Class: ReferenceError<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_referenceerror" id="errors_class_referenceerror">#</a></span></h3>
+<p>A subclass of <code>Error</code> that indicates that an attempt is being made to access a variable
+that is not defined. Most commonly it indicates a typo, or an otherwise broken program.
+While client code may generate and propagate these errors, in practice only V8 will do
+so.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript">doesNotExist<span class="sh_symbol">;</span> <span class="sh_comment">// throws ReferenceError, doesNotExist is not a variable in this program.</span></code></pre>
+<p><code>ReferenceError</code> instances will have an <code>.arguments</code> member that is an array containing
+one element -- a string representing the variable that was not defined.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">try</span> <span class="sh_cbracket">{</span>
+  doesNotExist<span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span> <span class="sh_keyword">catch</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  err<span class="sh_symbol">.</span><span class="sh_predef_var">arguments</span><span class="sh_symbol">[</span><span class="sh_number">0</span><span class="sh_symbol">]</span> <span class="sh_symbol">===</span> <span class="sh_string">'doesNotExist'</span><span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span></code></pre>
+<p>Unless the userland program is dynamically generating and running code,
+ReferenceErrors should always be considered a bug in the program, or its
+dependencies.
+
+</p>
+<h3>Class: SyntaxError<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_syntaxerror" id="errors_class_syntaxerror">#</a></span></h3>
+<p>A subclass of <code>Error</code> that indicates that a program is not valid JavaScript.
+These errors may only be generated and propagated as a result of code
+evaluation. Code evaluation may happen as a result of <code>eval</code>, <code>Function</code>,
+<code>require</code>, or <a href="https://nodejs.org/dist/latest-v5.x/docs/api/vm.html">vm</a>. These errors are almost always indicative of a broken
+program.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_keyword">try</span> <span class="sh_cbracket">{</span>
+  <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">"vm"</span><span class="sh_symbol">).</span><span class="sh_function">runInThisContext</span><span class="sh_symbol">(</span><span class="sh_string">"binary ! isNotOk"</span><span class="sh_symbol">);</span>
+<span class="sh_cbracket">}</span> <span class="sh_keyword">catch</span><span class="sh_symbol">(</span>err<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
+  <span class="sh_comment">// err will be a SyntaxError</span>
+<span class="sh_cbracket">}</span></code></pre>
+<p>SyntaxErrors are unrecoverable from the context that created them – they may only be caught
+by other contexts.
+
+</p>
+<h3>Class: TypeError<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_typeerror" id="errors_class_typeerror">#</a></span></h3>
+<p>A subclass of <code>Error</code> that indicates that a provided argument is not an allowable
+type. For example, passing a function to a parameter which expects a string would
+be considered a TypeError.
+
+</p>
+<pre class="sh_sourceCode"><code class="javascript"><span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'url'</span><span class="sh_symbol">).</span><span class="sh_function">parse</span><span class="sh_symbol">(</span><span class="sh_keyword">function</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span> <span class="sh_cbracket">}</span><span class="sh_symbol">);</span> <span class="sh_comment">// throws TypeError, since it expected a string</span></code></pre>
+<p>Node.js will generate and throw <code>TypeError</code> instances <em>immediately</em> -- they are a form
+of argument validation.
+
+</p>
+<h3>Exceptions vs. Errors<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_exceptions_vs_errors" id="errors_exceptions_vs_errors">#</a></span></h3>
+<!--type=misc-->
+
+<p>A JavaScript exception is a value that is thrown as a result of an invalid operation or
+as the target of a <code>throw</code> statement. While it is not required that these values are instances of
+<code>Error</code> or classes which inherit from <code>Error</code>, all exceptions thrown by Node.js or the JavaScript
+runtime <em>will</em> be instances of Error.
+
+</p>
+<p>Some exceptions are <em>unrecoverable</em> at the JavaScript layer. These exceptions will always bring
+down the process. These are usually failed <code>assert()</code> checks or <code>abort()</code> calls in the C++ layer.
+
+</p>
+<h2>System Errors<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_system_errors" id="errors_system_errors">#</a></span></h2>
+<p>System errors are generated in response to a program's runtime environment.
+Ideally, they represent operational errors that the program needs to be able to
+react to. They are generated at the syscall level: an exhaustive list of error
+codes and their meanings is available by running <code>man 2 intro</code> or <code>man 3 errno</code>
+on most Unices; or <a href="http://man7.org/linux/man-pages/man3/errno.3.html">online</a>.
+
+</p>
+<p>In Node.js, system errors are represented as augmented <code>Error</code> objects -- not full
+subclasses, but instead an error instance with added members.
+
+</p>
+<h3>Class: System Error<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_class_system_error" id="errors_class_system_error">#</a></span></h3>
+<h4>error.code<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_code" id="errors_error_code">#</a></span></h4>
+<h4>error.errno<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_errno" id="errors_error_errno">#</a></span></h4>
+<p>A string representing the error code, which is always <code>E</code> followed by capital
+letters, and may be referenced in <code>man 2 intro</code>.
+
+</p>
+<h4>error.syscall<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_error_syscall" id="errors_error_syscall">#</a></span></h4>
+<p>A string representing the <a href="http://man7.org/linux/man-pages/man2/syscall.2.html">syscall</a> that failed.
+
+</p>
+<h3>Common System Errors<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_common_system_errors" id="errors_common_system_errors">#</a></span></h3>
+<p>This list is <strong>not exhaustive</strong>, but enumerates many of the common system errors when
+writing a Node.js program. An exhaustive list may be found <a href="http://man7.org/linux/man-pages/man3/errno.3.html">here</a>.
+
+</p>
+<h4>EACCES: Permission denied<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eacces_permission_denied" id="errors_eacces_permission_denied">#</a></span></h4>
+<p>An attempt was made to access a file in a way forbidden by its file access
+permissions.
+
+</p>
+<h4>EADDRINUSE: Address already in use<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eaddrinuse_address_already_in_use" id="errors_eaddrinuse_address_already_in_use">#</a></span></h4>
+<p>An attempt to bind a server (<a href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html"><code>net</code></a>, <a href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html"><code>http</code></a>, or <a href="https://nodejs.org/dist/latest-v5.x/docs/api/https.html"><code>https</code></a>) to a local
+address failed due to another server on the local system already occupying
+that address.
+
+</p>
+<h4>ECONNREFUSED: Connection refused<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_econnrefused_connection_refused" id="errors_econnrefused_connection_refused">#</a></span></h4>
+<p>No connection could be made because the target machine actively refused
+it. This usually results from trying to connect to a service that is inactive
+on the foreign host.
+
+</p>
+<h4>ECONNRESET: Connection reset by peer<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_econnreset_connection_reset_by_peer" id="errors_econnreset_connection_reset_by_peer">#</a></span></h4>
+<p>A connection was forcibly closed by a peer. This normally results
+from a loss of the connection on the remote socket due to a timeout
+or reboot. Commonly encountered via the <a href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html"><code>http</code></a> and <a href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html"><code>net</code></a> modules.
+
+</p>
+<h4>EEXIST: File exists<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eexist_file_exists" id="errors_eexist_file_exists">#</a></span></h4>
+<p>An existing file was the target of an operation that required that the target
+not exist.
+
+</p>
+<h4>EISDIR: Is a directory<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eisdir_is_a_directory" id="errors_eisdir_is_a_directory">#</a></span></h4>
+<p>An operation expected a file, but the given pathname was a directory.
+
+</p>
+<h4>EMFILE: Too many open files in system<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_emfile_too_many_open_files_in_system" id="errors_emfile_too_many_open_files_in_system">#</a></span></h4>
+<p>Maximum number of <a href="https://en.wikipedia.org/wiki/File_descriptor">file descriptors</a> allowable on the system has
+been reached, and requests for another descriptor cannot be fulfilled until
+at least one has been closed.
+
+</p>
+<p>Commonly encountered when opening many files at once in parallel, especially
+on systems (in particular, OS X) where there is a low file descriptor limit
+for processes. To remedy a low limit, run <code>ulimit -n 2048</code> in the same shell
+that will run the Node.js process.
+
+</p>
+<h4>ENOENT: No such file or directory<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enoent_no_such_file_or_directory" id="errors_enoent_no_such_file_or_directory">#</a></span></h4>
+<p>Commonly raised by <a href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html"><code>fs</code></a> operations; a component of the specified pathname
+does not exist -- no entity (file or directory) could be found by the given path.
+
+</p>
+<h4>ENOTDIR: Not a directory<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enotdir_not_a_directory" id="errors_enotdir_not_a_directory">#</a></span></h4>
+<p>A component of the given pathname existed, but was not a directory as expected.
+Commonly raised by <a href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html#fs_fs_readdir_path_callback"><code>fs.readdir</code></a>.
+
+</p>
+<h4>ENOTEMPTY: Directory not empty<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_enotempty_directory_not_empty" id="errors_enotempty_directory_not_empty">#</a></span></h4>
+<p>A directory with entries was the target of an operation that requires
+an empty directory -- usually <a href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html#fs_fs_unlink_path_callback"><code>fs.unlink</code></a>.
+
+</p>
+<h4>EPERM: Operation not permitted<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_eperm_operation_not_permitted" id="errors_eperm_operation_not_permitted">#</a></span></h4>
+<p>An attempt was made to perform an operation that requires appropriate
+privileges.
+
+</p>
+<h4>EPIPE: Broken pipe<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_epipe_broken_pipe" id="errors_epipe_broken_pipe">#</a></span></h4>
+<p>A write on a pipe, socket, or FIFO for which there is no process to read the
+data. Commonly encountered at the <a href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html"><code>net</code></a> and <a href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html"><code>http</code></a> layers, indicative that
+the remote side of the stream being written to has been closed.
+
+</p>
+<h4>ETIMEDOUT: Operation timed out<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html#errors_etimedout_operation_timed_out" id="errors_etimedout_operation_timed_out">#</a></span></h4>
+<p>A connect or send request failed because the connected party did not properly
+respond after a period of time. Usually encountered by <a href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html"><code>http</code></a> or <a href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html"><code>net</code></a> --
+often a sign that a connected socket was not <code>.end()</code>'d appropriately.
+
+</p>
+
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+  </div>
+
+  <script src="./Errors Node.js v5.2.0 Manual & Documentation_files/sh_main.js"></script>
+  <script src="./Errors Node.js v5.2.0 Manual & Documentation_files/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+
+
+
+</body></html>

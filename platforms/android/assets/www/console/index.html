@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://nodejs.org/dist/latest-v5.x/docs/api/console.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Console Node.js v5.2.0 Manual &amp; Documentation</title>
+  <link rel="stylesheet" href="./Console Node.js v5.2.0 Manual & Documentation_files/css">
+  <link rel="stylesheet" href="./Console Node.js v5.2.0 Manual & Documentation_files/style.css">
+  <link rel="stylesheet" href="./Console Node.js v5.2.0 Manual & Documentation_files/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/console.html">
+</head>
+<body class="alt apidoc" id="api-section-console">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="https://nodejs.org/" title="Go back to the home page">
+          Node.js (1)
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="https://nodejs.org/dist/latest-v5.x/docs/api/documentation.html">About these Docs</a></li>
+<li><a class="nav-synopsis" href="https://nodejs.org/dist/latest-v5.x/docs/api/synopsis.html">Synopsis</a></li>
+<li><a class="nav-assert" href="https://nodejs.org/dist/latest-v5.x/docs/api/assert.html">Assertion Testing</a></li>
+<li><a class="nav-buffer" href="https://nodejs.org/dist/latest-v5.x/docs/api/buffer.html">Buffer</a></li>
+<li><a class="nav-addons" href="https://nodejs.org/dist/latest-v5.x/docs/api/addons.html">C/C++ Addons</a></li>
+<li><a class="nav-child_process" href="https://nodejs.org/dist/latest-v5.x/docs/api/child_process.html">Child Processes</a></li>
+<li><a class="nav-cluster" href="https://nodejs.org/dist/latest-v5.x/docs/api/cluster.html">Cluster</a></li>
+<li><a class="nav-console active" href="./Console Node.js v5.2.0 Manual & Documentation_files/Console Node.js v5.2.0 Manual & Documentation.html">Console</a></li>
+<li><a class="nav-crypto" href="https://nodejs.org/dist/latest-v5.x/docs/api/crypto.html">Crypto</a></li>
+<li><a class="nav-debugger" href="https://nodejs.org/dist/latest-v5.x/docs/api/debugger.html">Debugger</a></li>
+<li><a class="nav-dns" href="https://nodejs.org/dist/latest-v5.x/docs/api/dns.html">DNS</a></li>
+<li><a class="nav-domain" href="https://nodejs.org/dist/latest-v5.x/docs/api/domain.html">Domain</a></li>
+<li><a class="nav-errors" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html">Errors</a></li>
+<li><a class="nav-events" href="https://nodejs.org/dist/latest-v5.x/docs/api/events.html">Events</a></li>
+<li><a class="nav-fs" href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html">File System</a></li>
+<li><a class="nav-globals" href="https://nodejs.org/dist/latest-v5.x/docs/api/globals.html">Globals</a></li>
+<li><a class="nav-http" href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https://nodejs.org/dist/latest-v5.x/docs/api/https.html">HTTPS</a></li>
+<li><a class="nav-modules" href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html">Modules</a></li>
+<li><a class="nav-net" href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html">Net</a></li>
+<li><a class="nav-os" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html">OS</a></li>
+<li><a class="nav-path" href="https://nodejs.org/dist/latest-v5.x/docs/api/path.html">Path</a></li>
+<li><a class="nav-process" href="https://nodejs.org/dist/latest-v5.x/docs/api/process.html">Process</a></li>
+<li><a class="nav-punycode" href="https://nodejs.org/dist/latest-v5.x/docs/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="https://nodejs.org/dist/latest-v5.x/docs/api/querystring.html">Query Strings</a></li>
+<li><a class="nav-readline" href="https://nodejs.org/dist/latest-v5.x/docs/api/readline.html">Readline</a></li>
+<li><a class="nav-repl" href="https://nodejs.org/dist/latest-v5.x/docs/api/repl.html">REPL</a></li>
+<li><a class="nav-stream" href="https://nodejs.org/dist/latest-v5.x/docs/api/stream.html">Stream</a></li>
+<li><a class="nav-string_decoder" href="https://nodejs.org/dist/latest-v5.x/docs/api/string_decoder.html">String Decoder</a></li>
+<li><a class="nav-timers" href="https://nodejs.org/dist/latest-v5.x/docs/api/timers.html">Timers</a></li>
+<li><a class="nav-tls" href="https://nodejs.org/dist/latest-v5.x/docs/api/tls.html">TLS/SSL</a></li>
+<li><a class="nav-tty" href="https://nodejs.org/dist/latest-v5.x/docs/api/tty.html">TTY</a></li>
+<li><a class="nav-dgram" href="https://nodejs.org/dist/latest-v5.x/docs/api/dgram.html">UDP/Datagram</a></li>
+<li><a class="nav-url" href="https://nodejs.org/dist/latest-v5.x/docs/api/url.html">URL</a></li>
+<li><a class="nav-util" href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html">Utilities</a></li>
+<li><a class="nav-v8" href="https://nodejs.org/dist/latest-v5.x/docs/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="https://nodejs.org/dist/latest-v5.x/docs/api/vm.html">VM</a></li>
+<li><a class="nav-zlib" href="https://nodejs.org/dist/latest-v5.x/docs/api/zlib.html">ZLIB</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="console" class="interior">
+      <header>
+        <h1>Node.js v5.2.0 Documentation</h1>
+        <div id="gtoc">
+          <p>
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/index.html" name="toc">Index</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/all.html">View on single page</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.json">View as JSON</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console">Console</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_class_console">Class: Console</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_new_console_stdout_stderr">new Console(stdout[, stderr])</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_1">console</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_assert_value_message">console.assert(value[, message][, ...])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_dir_obj_options">console.dir(obj[, options])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_error_data">console.error([data][, ...])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_info_data">console.info([data][, ...])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_log_data">console.log([data][, ...])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_time_label">console.time(label)</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_timeend_label">console.timeEnd(label)</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_trace_message">console.trace(message[, ...])</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_warn_data">console.warn([data][, ...])</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>Console<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console" id="console_console">#</a></span></h1>
+<pre class="api_stability_2 sh_sourceCode">Stability<span class="sh_symbol">:</span> <span class="sh_number">2</span> <span class="sh_symbol">-</span> Stable</pre><p>The module defines a <code>Console</code> class and exports a <code>console</code> object.
+
+</p>
+<p>The <code>console</code> object is a special instance of <code>Console</code> whose output is
+sent to stdout or stderr.
+
+</p>
+<p>For ease of use, <code>console</code> is defined as a global object and can be used
+directly without <code>require</code>.
+
+</p>
+<h2>Class: Console<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_class_console" id="console_class_console">#</a></span></h2>
+<!--type=class-->
+
+<p>Use <code>require('console').Console</code> or <code>console.Console</code> to access this class.
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_keyword">var</span> Console <span class="sh_symbol">=</span> <span class="sh_function">require</span><span class="sh_symbol">(</span><span class="sh_string">'console'</span><span class="sh_symbol">).</span>Console<span class="sh_symbol">;</span>
+<span class="sh_keyword">var</span> Console <span class="sh_symbol">=</span> console<span class="sh_symbol">.</span>Console<span class="sh_symbol">;</span></code></pre>
+<p>You can use <code>Console</code> class to custom simple logger like <code>console</code>, but with
+different output streams.
+
+</p>
+<h3>new Console(stdout[, stderr])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_new_console_stdout_stderr" id="console_new_console_stdout_stderr">#</a></span></h3>
+<p>Create a new <code>Console</code> by passing one or two writable stream instances.
+<code>stdout</code> is a writable stream to print log or info output. <code>stderr</code>
+is used for warning or error output. If <code>stderr</code> isn't passed, the warning
+and error output will be sent to the <code>stdout</code>.
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_keyword">var</span> output <span class="sh_symbol">=</span> fs<span class="sh_symbol">.</span><span class="sh_function">createWriteStream</span><span class="sh_symbol">(</span><span class="sh_string">'./stdout.log'</span><span class="sh_symbol">);</span>
+<span class="sh_keyword">var</span> errorOutput <span class="sh_symbol">=</span> fs<span class="sh_symbol">.</span><span class="sh_function">createWriteStream</span><span class="sh_symbol">(</span><span class="sh_string">'./stderr.log'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// custom simple logger</span>
+<span class="sh_keyword">var</span> logger <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Console</span><span class="sh_symbol">(</span>output<span class="sh_symbol">,</span> errorOutput<span class="sh_symbol">);</span>
+<span class="sh_comment">// use it like console</span>
+<span class="sh_keyword">var</span> count <span class="sh_symbol">=</span> <span class="sh_number">5</span><span class="sh_symbol">;</span>
+logger<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span class="sh_string">'count: %d'</span><span class="sh_symbol">,</span> count<span class="sh_symbol">);</span>
+<span class="sh_comment">// in stdout.log: count 5</span></code></pre>
+<p>The global <code>console</code> is a special <code>Console</code> whose output is sent to
+<code>process.stdout</code> and <code>process.stderr</code>:
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_keyword">new</span> <span class="sh_function">Console</span><span class="sh_symbol">(</span>process<span class="sh_symbol">.</span>stdout<span class="sh_symbol">,</span> process<span class="sh_symbol">.</span>stderr<span class="sh_symbol">);</span></code></pre>
+<h2>console<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_1" id="console_console_1">#</a></span></h2>
+<div class="signature"><ul>
+<li><span class="type">Object</span></li>
+</ul></div>
+<!--type=global-->
+
+<p>For printing to stdout and stderr. Similar to the console object functions
+provided by most web browsers, here the output is sent to stdout or stderr.
+
+</p>
+<p>The console functions are synchronous when the destination is a terminal or
+a file (to avoid lost messages in case of premature exit) and asynchronous
+when it's a pipe (to avoid blocking for long periods of time).
+
+</p>
+<p>That is, in the following example, stdout is non-blocking while stderr
+is blocking:
+
+</p>
+<pre class="sh_sourceCode"><code>$ node script<span class="sh_symbol">.</span>js <span class="sh_number">2</span><span class="sh_symbol">&gt;</span> error<span class="sh_symbol">.</span>log <span class="sh_symbol">|</span> tee info<span class="sh_symbol">.</span>log</code></pre>
+<p>In daily use, the blocking/non-blocking dichotomy is not something you
+should worry about unless you log huge amounts of data.
+
+</p>
+<h3>console.assert(value[, message][, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_assert_value_message" id="console_console_assert_value_message">#</a></span></h3>
+<p>Similar to <a href="https://nodejs.org/dist/latest-v5.x/docs/api/assert.html#assert_assert_value_message_assert_ok_value_message"><code>assert.ok()</code></a>, but the error message is formatted as
+<code>util.format(message...)</code>.
+
+</p>
+<h3>console.dir(obj[, options])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_dir_obj_options" id="console_console_dir_obj_options">#</a></span></h3>
+<p>Uses <a href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_inspect_object_options"><code>util.inspect()</code></a> on <code>obj</code> and prints resulting string to stdout. This function
+bypasses any custom <code>inspect()</code> function on <code>obj</code>. An optional <em>options</em> object
+may be passed that alters certain aspects of the formatted string:
+
+</p>
+<ul>
+<li><p><code>showHidden</code> - if <code>true</code> then the object's non-enumerable and symbol
+properties will be shown too. Defaults to <code>false</code>.</p>
+</li>
+<li><p><code>depth</code> - tells <code>inspect</code> how many times to recurse while formatting the
+object. This is useful for inspecting large complicated objects. Defaults to
+<code>2</code>. To make it recurse indefinitely pass <code>null</code>.</p>
+</li>
+<li><p><code>colors</code> - if <code>true</code>, then the output will be styled with ANSI color codes.
+Defaults to <code>false</code>. Colors are customizable, see <a href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_customizing_util_inspect_colors">customizing <code>util.inspect()</code> colors</a>.</p>
+</li>
+</ul>
+<h3>console.error([data][, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_error_data" id="console_console_error_data">#</a></span></h3>
+<p>Same as <a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_log_data"><code>console.log()</code></a> but prints to stderr.
+
+</p>
+<h3>console.info([data][, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_info_data" id="console_console_info_data">#</a></span></h3>
+<p>Same as <a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_log_data"><code>console.log()</code></a>.
+
+</p>
+<h3>console.log([data][, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_log_data" id="console_console_log_data">#</a></span></h3>
+<p>Prints to stdout with newline. This function can take multiple arguments in a
+<code>printf()</code>-like way. Example:
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_keyword">var</span> count <span class="sh_symbol">=</span> <span class="sh_number">5</span><span class="sh_symbol">;</span>
+console<span class="sh_symbol">.</span><span class="sh_function">log</span><span class="sh_symbol">(</span><span class="sh_string">'count: %d'</span><span class="sh_symbol">,</span> count<span class="sh_symbol">);</span>
+<span class="sh_comment">// prints 'count: 5'</span></code></pre>
+<p>If formatting elements are not found in the first string then <a href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_inspect_object_options"><code>util.inspect()</code></a>
+is used on each argument.  See <a href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_format_format"><code>util.format()</code></a> for more information.
+
+</p>
+<h3>console.time(label)<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_time_label" id="console_console_time_label">#</a></span></h3>
+<p>Starts a timer that can be used to compute the duration of an operation. Timers
+are identified by a unique name. Use the same name when you call
+<a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_timeend_label"><code>console.timeEnd()</code></a> to stop the timer and output the elapsed time in
+milliseconds. Timer durations are accurate to the sub-millisecond.
+
+</p>
+<h3>console.timeEnd(label)<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_timeend_label" id="console_console_timeend_label">#</a></span></h3>
+<p>Stops a timer that was previously started by calling
+<a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_time_label"><code>console.time()</code></a> and prints the result to the
+console.
+
+</p>
+<p>Example:
+
+</p>
+<pre class="sh_sourceCode"><code>console<span class="sh_symbol">.</span><span class="sh_function">time</span><span class="sh_symbol">(</span><span class="sh_string">'100-elements'</span><span class="sh_symbol">);</span>
+<span class="sh_keyword">for</span> <span class="sh_symbol">(</span><span class="sh_keyword">var</span> i <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span> i <span class="sh_symbol">&lt;</span> <span class="sh_number">100</span><span class="sh_symbol">;</span> i<span class="sh_symbol">++)</span> <span class="sh_cbracket">{</span>
+  <span class="sh_symbol">;</span>
+<span class="sh_cbracket">}</span>
+console<span class="sh_symbol">.</span><span class="sh_function">timeEnd</span><span class="sh_symbol">(</span><span class="sh_string">'100-elements'</span><span class="sh_symbol">);</span>
+<span class="sh_comment">// prints 100-elements: 225.438ms</span></code></pre>
+<h3>console.trace(message[, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_trace_message" id="console_console_trace_message">#</a></span></h3>
+<p>Print to stderr <code>'Trace :'</code>, followed by the formatted message and stack trace
+to the current position.
+
+</p>
+<h3>console.warn([data][, ...])<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_warn_data" id="console_console_warn_data">#</a></span></h3>
+<p>Same as <a href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html#console_console_error_data"><code>console.error()</code></a>.
+
+</p>
+
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+  </div>
+
+  <script src="./Console Node.js v5.2.0 Manual & Documentation_files/sh_main.js"></script>
+  <script src="./Console Node.js v5.2.0 Manual & Documentation_files/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+
+
+
+</body></html>

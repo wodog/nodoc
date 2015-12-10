@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://nodejs.org/dist/latest-v5.x/docs/api/os.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>OS Node.js v5.2.0 Manual &amp; Documentation</title>
+  <link rel="stylesheet" href="./OS Node.js v5.2.0 Manual & Documentation_files/css">
+  <link rel="stylesheet" href="./OS Node.js v5.2.0 Manual & Documentation_files/style.css">
+  <link rel="stylesheet" href="./OS Node.js v5.2.0 Manual & Documentation_files/sh.css">
+  <link rel="canonical" href="https://nodejs.org/api/os.html">
+</head>
+<body class="alt apidoc" id="api-section-os">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="https://nodejs.org/" title="Go back to the home page">
+          Node.js (1)
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="https://nodejs.org/dist/latest-v5.x/docs/api/documentation.html">About these Docs</a></li>
+<li><a class="nav-synopsis" href="https://nodejs.org/dist/latest-v5.x/docs/api/synopsis.html">Synopsis</a></li>
+<li><a class="nav-assert" href="https://nodejs.org/dist/latest-v5.x/docs/api/assert.html">Assertion Testing</a></li>
+<li><a class="nav-buffer" href="https://nodejs.org/dist/latest-v5.x/docs/api/buffer.html">Buffer</a></li>
+<li><a class="nav-addons" href="https://nodejs.org/dist/latest-v5.x/docs/api/addons.html">C/C++ Addons</a></li>
+<li><a class="nav-child_process" href="https://nodejs.org/dist/latest-v5.x/docs/api/child_process.html">Child Processes</a></li>
+<li><a class="nav-cluster" href="https://nodejs.org/dist/latest-v5.x/docs/api/cluster.html">Cluster</a></li>
+<li><a class="nav-console" href="https://nodejs.org/dist/latest-v5.x/docs/api/console.html">Console</a></li>
+<li><a class="nav-crypto" href="https://nodejs.org/dist/latest-v5.x/docs/api/crypto.html">Crypto</a></li>
+<li><a class="nav-debugger" href="https://nodejs.org/dist/latest-v5.x/docs/api/debugger.html">Debugger</a></li>
+<li><a class="nav-dns" href="https://nodejs.org/dist/latest-v5.x/docs/api/dns.html">DNS</a></li>
+<li><a class="nav-domain" href="https://nodejs.org/dist/latest-v5.x/docs/api/domain.html">Domain</a></li>
+<li><a class="nav-errors" href="https://nodejs.org/dist/latest-v5.x/docs/api/errors.html">Errors</a></li>
+<li><a class="nav-events" href="https://nodejs.org/dist/latest-v5.x/docs/api/events.html">Events</a></li>
+<li><a class="nav-fs" href="https://nodejs.org/dist/latest-v5.x/docs/api/fs.html">File System</a></li>
+<li><a class="nav-globals" href="https://nodejs.org/dist/latest-v5.x/docs/api/globals.html">Globals</a></li>
+<li><a class="nav-http" href="https://nodejs.org/dist/latest-v5.x/docs/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https://nodejs.org/dist/latest-v5.x/docs/api/https.html">HTTPS</a></li>
+<li><a class="nav-modules" href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html">Modules</a></li>
+<li><a class="nav-net" href="https://nodejs.org/dist/latest-v5.x/docs/api/net.html">Net</a></li>
+<li><a class="nav-os active" href="./OS Node.js v5.2.0 Manual & Documentation_files/OS Node.js v5.2.0 Manual & Documentation.html">OS</a></li>
+<li><a class="nav-path" href="https://nodejs.org/dist/latest-v5.x/docs/api/path.html">Path</a></li>
+<li><a class="nav-process" href="https://nodejs.org/dist/latest-v5.x/docs/api/process.html">Process</a></li>
+<li><a class="nav-punycode" href="https://nodejs.org/dist/latest-v5.x/docs/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="https://nodejs.org/dist/latest-v5.x/docs/api/querystring.html">Query Strings</a></li>
+<li><a class="nav-readline" href="https://nodejs.org/dist/latest-v5.x/docs/api/readline.html">Readline</a></li>
+<li><a class="nav-repl" href="https://nodejs.org/dist/latest-v5.x/docs/api/repl.html">REPL</a></li>
+<li><a class="nav-stream" href="https://nodejs.org/dist/latest-v5.x/docs/api/stream.html">Stream</a></li>
+<li><a class="nav-string_decoder" href="https://nodejs.org/dist/latest-v5.x/docs/api/string_decoder.html">String Decoder</a></li>
+<li><a class="nav-timers" href="https://nodejs.org/dist/latest-v5.x/docs/api/timers.html">Timers</a></li>
+<li><a class="nav-tls" href="https://nodejs.org/dist/latest-v5.x/docs/api/tls.html">TLS/SSL</a></li>
+<li><a class="nav-tty" href="https://nodejs.org/dist/latest-v5.x/docs/api/tty.html">TTY</a></li>
+<li><a class="nav-dgram" href="https://nodejs.org/dist/latest-v5.x/docs/api/dgram.html">UDP/Datagram</a></li>
+<li><a class="nav-url" href="https://nodejs.org/dist/latest-v5.x/docs/api/url.html">URL</a></li>
+<li><a class="nav-util" href="https://nodejs.org/dist/latest-v5.x/docs/api/util.html">Utilities</a></li>
+<li><a class="nav-v8" href="https://nodejs.org/dist/latest-v5.x/docs/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="https://nodejs.org/dist/latest-v5.x/docs/api/vm.html">VM</a></li>
+<li><a class="nav-zlib" href="https://nodejs.org/dist/latest-v5.x/docs/api/zlib.html">ZLIB</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="os" class="interior">
+      <header>
+        <h1>Node.js v5.2.0 Documentation</h1>
+        <div id="gtoc">
+          <p>
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/index.html" name="toc">Index</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/all.html">View on single page</a> |
+            <a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.json">View as JSON</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os">OS</a><ul>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_eol">os.EOL</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_arch">os.arch()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_cpus">os.cpus()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_endianness">os.endianness()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_freemem">os.freemem()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_homedir">os.homedir()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_hostname">os.hostname()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_loadavg">os.loadavg()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_networkinterfaces">os.networkInterfaces()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_platform">os.platform()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_release">os.release()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_tmpdir">os.tmpdir()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_totalmem">os.totalmem()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_type">os.type()</a></li>
+<li><a href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_uptime">os.uptime()</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>OS<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os" id="os_os">#</a></span></h1>
+<pre class="api_stability_2 sh_sourceCode">Stability<span class="sh_symbol">:</span> <span class="sh_number">2</span> <span class="sh_symbol">-</span> Stable</pre><p>Provides a few basic operating-system related utility functions.
+
+</p>
+<p>Use <code>require('os')</code> to access this module.
+
+</p>
+<h2>os.EOL<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_eol" id="os_os_eol">#</a></span></h2>
+<p>A constant defining the appropriate End-of-line marker for the operating
+system.
+
+</p>
+<h2>os.arch()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_arch" id="os_os_arch">#</a></span></h2>
+<p>Returns the operating system CPU architecture. Possible values are <code>'x64'</code>,
+<code>'arm'</code> and <code>'ia32'</code>. Returns the value of <code>process.arch</code>.
+
+</p>
+<h2>os.cpus()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_cpus" id="os_os_cpus">#</a></span></h2>
+<p>Returns an array of objects containing information about each CPU/core
+installed: model, speed (in MHz), and times (an object containing the number of
+milliseconds the CPU/core spent in: user, nice, sys, idle, and irq).
+
+</p>
+<p>Example inspection of os.cpus:
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_symbol">[</span> <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">252020</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">30340</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1070356870</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">0</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">306960</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">26980</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1071569080</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">0</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">248450</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">21750</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1070919370</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">0</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">256880</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">19430</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1070905480</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">20</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">511580</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">20</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">40900</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1070842510</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">0</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">291660</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">34360</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1070888000</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">10</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">308260</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">0</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">55410</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1071129970</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">880</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+  <span class="sh_cbracket">{</span> model<span class="sh_symbol">:</span> <span class="sh_string">'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz'</span><span class="sh_symbol">,</span>
+    speed<span class="sh_symbol">:</span> <span class="sh_number">2926</span><span class="sh_symbol">,</span>
+    times<span class="sh_symbol">:</span>
+     <span class="sh_cbracket">{</span> user<span class="sh_symbol">:</span> <span class="sh_number">266450</span><span class="sh_symbol">,</span>
+       nice<span class="sh_symbol">:</span> <span class="sh_number">1480</span><span class="sh_symbol">,</span>
+       sys<span class="sh_symbol">:</span> <span class="sh_number">34920</span><span class="sh_symbol">,</span>
+       idle<span class="sh_symbol">:</span> <span class="sh_number">1072572010</span><span class="sh_symbol">,</span>
+       irq<span class="sh_symbol">:</span> <span class="sh_number">30</span> <span class="sh_cbracket">}</span> <span class="sh_cbracket">}</span> <span class="sh_symbol">]</span></code></pre>
+<p>Note that since <code>nice</code> values are UNIX centric in Windows the <code>nice</code> values of
+all processors are always 0.
+
+</p>
+<h2>os.endianness()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_endianness" id="os_os_endianness">#</a></span></h2>
+<p>Returns the endianness of the CPU. Possible values are <code>'BE'</code> for big endian
+or <code>'LE'</code> for little endian.
+
+</p>
+<h2>os.freemem()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_freemem" id="os_os_freemem">#</a></span></h2>
+<p>Returns the amount of free system memory in bytes.
+
+</p>
+<h2>os.homedir()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_homedir" id="os_os_homedir">#</a></span></h2>
+<p>Returns the home directory of the current user.
+
+</p>
+<h2>os.hostname()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_hostname" id="os_os_hostname">#</a></span></h2>
+<p>Returns the hostname of the operating system.
+
+</p>
+<h2>os.loadavg()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_loadavg" id="os_os_loadavg">#</a></span></h2>
+<p>Returns an array containing the 1, 5, and 15 minute load averages.
+
+</p>
+<p>The load average is a measure of system activity, calculated by the operating
+system and expressed as a fractional number.  As a rule of thumb, the load
+average should ideally be less than the number of logical CPUs in the system.
+
+</p>
+<p>The load average is a very UNIX-y concept; there is no real equivalent on
+Windows platforms.  That is why this function always returns <code>[0, 0, 0]</code> on
+Windows.
+
+</p>
+<h2>os.networkInterfaces()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_networkinterfaces" id="os_os_networkinterfaces">#</a></span></h2>
+<p>Get a list of network interfaces:
+
+</p>
+<pre class="sh_sourceCode"><code><span class="sh_cbracket">{</span> lo<span class="sh_symbol">:</span>
+   <span class="sh_symbol">[</span> <span class="sh_cbracket">{</span> address<span class="sh_symbol">:</span> <span class="sh_string">'127.0.0.1'</span><span class="sh_symbol">,</span>
+       netmask<span class="sh_symbol">:</span> <span class="sh_string">'255.0.0.0'</span><span class="sh_symbol">,</span>
+       family<span class="sh_symbol">:</span> <span class="sh_string">'IPv4'</span><span class="sh_symbol">,</span>
+       mac<span class="sh_symbol">:</span> <span class="sh_string">'00:00:00:00:00:00'</span><span class="sh_symbol">,</span>
+       internal<span class="sh_symbol">:</span> <span class="sh_keyword">true</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+     <span class="sh_cbracket">{</span> address<span class="sh_symbol">:</span> <span class="sh_string">'::1'</span><span class="sh_symbol">,</span>
+       netmask<span class="sh_symbol">:</span> <span class="sh_string">'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'</span><span class="sh_symbol">,</span>
+       family<span class="sh_symbol">:</span> <span class="sh_string">'IPv6'</span><span class="sh_symbol">,</span>
+       mac<span class="sh_symbol">:</span> <span class="sh_string">'00:00:00:00:00:00'</span><span class="sh_symbol">,</span>
+       internal<span class="sh_symbol">:</span> <span class="sh_keyword">true</span> <span class="sh_cbracket">}</span> <span class="sh_symbol">],</span>
+  eth0<span class="sh_symbol">:</span>
+   <span class="sh_symbol">[</span> <span class="sh_cbracket">{</span> address<span class="sh_symbol">:</span> <span class="sh_string">'192.168.1.108'</span><span class="sh_symbol">,</span>
+       netmask<span class="sh_symbol">:</span> <span class="sh_string">'255.255.255.0'</span><span class="sh_symbol">,</span>
+       family<span class="sh_symbol">:</span> <span class="sh_string">'IPv4'</span><span class="sh_symbol">,</span>
+       mac<span class="sh_symbol">:</span> <span class="sh_string">'01:02:03:0a:0b:0c'</span><span class="sh_symbol">,</span>
+       internal<span class="sh_symbol">:</span> <span class="sh_keyword">false</span> <span class="sh_cbracket">}</span><span class="sh_symbol">,</span>
+     <span class="sh_cbracket">{</span> address<span class="sh_symbol">:</span> <span class="sh_string">'fe80::a00:27ff:fe4e:66a1'</span><span class="sh_symbol">,</span>
+       netmask<span class="sh_symbol">:</span> <span class="sh_string">'ffff:ffff:ffff:ffff::'</span><span class="sh_symbol">,</span>
+       family<span class="sh_symbol">:</span> <span class="sh_string">'IPv6'</span><span class="sh_symbol">,</span>
+       mac<span class="sh_symbol">:</span> <span class="sh_string">'01:02:03:0a:0b:0c'</span><span class="sh_symbol">,</span>
+       internal<span class="sh_symbol">:</span> <span class="sh_keyword">false</span> <span class="sh_cbracket">}</span> <span class="sh_symbol">]</span> <span class="sh_cbracket">}</span></code></pre>
+<p>Note that due to the underlying implementation this will only return network
+interfaces that have been assigned an address.
+
+</p>
+<h2>os.platform()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_platform" id="os_os_platform">#</a></span></h2>
+<p>Returns the operating system platform. Possible values are <code>'darwin'</code>,
+<code>'freebsd'</code>, <code>'linux'</code>, <code>'sunos'</code> or <code>'win32'</code>. Returns the value of
+<code>process.platform</code>.
+
+</p>
+<h2>os.release()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_release" id="os_os_release">#</a></span></h2>
+<p>Returns the operating system release.
+
+</p>
+<h2>os.tmpdir()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_tmpdir" id="os_os_tmpdir">#</a></span></h2>
+<p>Returns the operating system's default directory for temporary files.
+
+</p>
+<h2>os.totalmem()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_totalmem" id="os_os_totalmem">#</a></span></h2>
+<p>Returns the total amount of system memory in bytes.
+
+</p>
+<h2>os.type()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_type" id="os_os_type">#</a></span></h2>
+<p>Returns the operating system name. For example <code>'Linux'</code> on Linux, <code>'Darwin'</code>
+on OS X and <code>'Windows_NT'</code> on Windows.
+
+</p>
+<h2>os.uptime()<span><a class="mark" href="https://nodejs.org/dist/latest-v5.x/docs/api/os.html#os_os_uptime" id="os_os_uptime">#</a></span></h2>
+<p>Returns the system uptime in seconds.
+</p>
+
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+  </div>
+
+  <script src="./OS Node.js v5.2.0 Manual & Documentation_files/sh_main.js"></script>
+  <script src="./OS Node.js v5.2.0 Manual & Documentation_files/sh_javascript.min.js"></script>
+  <script>highlight(undefined, undefined, 'pre');</script>
+
+
+
+</body></html>
